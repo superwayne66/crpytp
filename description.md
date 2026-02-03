@@ -32,13 +32,12 @@ Outlier detection helps identify data points that deviate markedly from the gene
 
 Daily simple returns were computed as \(r_t = (\text{close}_t - \text{close}_{t-1})/\text{close}_{t-1}\).  Returns were then standardized using the Z‑score.  Applying the ±3 threshold resulted in **40 return outliers** (≈ 0.03 % of observations).  The most extreme positive return occurred on **22 March 2017** with a one‑day gain of roughly 78 %, and the largest negative return (≈ –68 %) occurred on **7 September 2020**.  Figure 1 shows the distribution of daily returns and highlights how most values lie close to zero while a few tail observations stand out.
 
-![Distribution of daily returns](file-service://file-DmZ3VTMsXDAsqbksr6sn78)
-
+![Distribution of daily returns](returns_distribution.png)
 #### Volume
 
 Trading volumes are highly skewed, so the natural logarithm \(\ln(1 + \text{volume})\) was used before standardization.  Using the ±3‑Z‑score threshold flagged **1 170 volume outliers** (~0.84 % of observations).  Many of these high‑volume outliers occur during market stress periods and may reflect genuine liquidity spikes rather than data errors.  Figure 2 shows the Z‑scores of log‑volume over time.  The majority of points lie within ±3, but several clusters exceed the threshold.
 
-![Log‑volume Z‑scores](file-service://file-RATQT7odUxqQJBATeDdVqD)
+![Log‑volume Z‑scores](volume_zscore.png)
 
 ### 2.3 Data readiness
 
@@ -113,7 +112,7 @@ The first principal component explained **≈ 89.9 %** of the weighted varianc
 
 The PC1 time series (scores) is plotted in Figure 3.  Because most of its variance comes from the price variables, PC1 moves closely with the overall price level.  The volume‑weighted correlation between the daily returns and PC1 is only **≈ 0.05**, indicating that this principal component explains very little of the daily return variation; returns are mostly idiosyncratic for a single asset.
 
-![PC1 scores over time](file-service://file-DnYHn5dFhTVdGnLim4Lh4o)
+![PC1 scores over time](PC1_scores.png) 
 
 ### 3.3 Regression of returns onZZPC1
 
